@@ -13,6 +13,8 @@
 		82F3F40320034B3200CFC0E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F3F40120034B3200CFC0E2 /* Main.storyboard */; };
 		82F3F40F20034B3300CFC0E2 /* SuperCheeseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F40E20034B3300CFC0E2 /* SuperCheeseTests.swift */; };
 		82F3F41A20034B3300CFC0E2 /* SuperCheeseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F41920034B3300CFC0E2 /* SuperCheeseUITests.swift */; };
+		82F3F4282003B54300CFC0E2 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4272003B54300CFC0E2 /* CaptureView.swift */; };
+		82F3F42A2003C87200CFC0E2 /* CaptureWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4292003C87200CFC0E2 /* CaptureWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		82F3F41520034B3300CFC0E2 /* SuperCheeseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCheeseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F3F41920034B3300CFC0E2 /* SuperCheeseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCheeseUITests.swift; sourceTree = "<group>"; };
 		82F3F41B20034B3300CFC0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F3F4272003B54300CFC0E2 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		82F3F4292003C87200CFC0E2 /* CaptureWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				82F3F40120034B3200CFC0E2 /* Main.storyboard */,
 				82F3F40420034B3200CFC0E2 /* Info.plist */,
 				82F3F40520034B3200CFC0E2 /* SuperCheese.entitlements */,
+				82F3F4272003B54300CFC0E2 /* CaptureView.swift */,
+				82F3F4292003C87200CFC0E2 /* CaptureWindow.swift */,
 			);
 			path = SuperCheese;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			files = (
 				82F3F3FE20034B3200CFC0E2 /* ViewController.swift in Sources */,
 				82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */,
+				82F3F42A2003C87200CFC0E2 /* CaptureWindow.swift in Sources */,
+				82F3F4282003B54300CFC0E2 /* CaptureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

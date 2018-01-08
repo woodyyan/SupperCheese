@@ -13,7 +13,16 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
+            self.keyDown(with: aEvent)
+            return aEvent
+        }
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        super.keyDown(with: event)
+        
+        print("aaa")
     }
 
     override var representedObject: Any? {
