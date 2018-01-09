@@ -29,29 +29,7 @@ class CaptureWindow: NSWindow {
         styleMask = [NSWindow.StyleMask.borderless, NSWindow.StyleMask.resizable]
         ignoresMouseEvents = false
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(recordButtonDidClick(_:)),
-            name: NSNotification.Name(rawValue: "CaptureViewRecordButtonDidClick"),
-            object: nil
-        )
-        
         setFrame(NSRect(x: 200, y: 200, width: 500, height: 500), display: true)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(
-            self, name: NSNotification.Name(rawValue: "CaptureViewRecordButtonDidClick"),
-            object: nil
-        )
-    }
-    
-    // MARK: - Notification
-    @objc func recordButtonDidClick(_ notification:Notification) {
-        var frame = self.frame
-        frame.size.height += 0.25
-        setFrame(frame, display: true)
-        ignoresMouseEvents = true
     }
     
     override func performKeyEquivalent(with theEvent: NSEvent) -> Bool {

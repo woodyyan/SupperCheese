@@ -15,6 +15,9 @@
 		82F3F41A20034B3300CFC0E2 /* SuperCheeseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F41920034B3300CFC0E2 /* SuperCheeseUITests.swift */; };
 		82F3F4282003B54300CFC0E2 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4272003B54300CFC0E2 /* CaptureView.swift */; };
 		82F3F42A2003C87200CFC0E2 /* CaptureWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4292003C87200CFC0E2 /* CaptureWindow.swift */; };
+		82F3F42C2004A82100CFC0E2 /* CaptureWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F42B2004A82100CFC0E2 /* CaptureWindowController.swift */; };
+		82F3F4322004F90D00CFC0E2 /* WindowInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4312004F90D00CFC0E2 /* WindowInfoManager.swift */; };
+		82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		82F3F41B20034B3300CFC0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82F3F4272003B54300CFC0E2 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		82F3F4292003C87200CFC0E2 /* CaptureWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureWindow.swift; sourceTree = "<group>"; };
+		82F3F42B2004A82100CFC0E2 /* CaptureWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureWindowController.swift; sourceTree = "<group>"; };
+		82F3F4312004F90D00CFC0E2 /* WindowInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInfoManager.swift; sourceTree = "<group>"; };
+		82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,9 @@
 				82F3F40520034B3200CFC0E2 /* SuperCheese.entitlements */,
 				82F3F4272003B54300CFC0E2 /* CaptureView.swift */,
 				82F3F4292003C87200CFC0E2 /* CaptureWindow.swift */,
+				82F3F42B2004A82100CFC0E2 /* CaptureWindowController.swift */,
+				82F3F4312004F90D00CFC0E2 /* WindowInfoManager.swift */,
+				82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */,
 			);
 			path = SuperCheese;
 			sourceTree = "<group>";
@@ -264,8 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F3F3FE20034B3200CFC0E2 /* ViewController.swift in Sources */,
+				82F3F4322004F90D00CFC0E2 /* WindowInfoManager.swift in Sources */,
 				82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */,
+				82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */,
 				82F3F42A2003C87200CFC0E2 /* CaptureWindow.swift in Sources */,
+				82F3F42C2004A82100CFC0E2 /* CaptureWindowController.swift in Sources */,
 				82F3F4282003B54300CFC0E2 /* CaptureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

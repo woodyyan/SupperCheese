@@ -1,6 +1,8 @@
 
 import Cocoa
 
+let cropViewLineWidth: CGFloat = 3.0
+
 class CaptureView: NSView {
     
     var trackingArea: NSTrackingArea?
@@ -20,7 +22,7 @@ class CaptureView: NSView {
     
     func drawBox() {
         let frame = self.frame
-        let width:CGFloat = 3.0
+        let width = cropViewLineWidth
         
         NSColor(deviceRed: 1.0, green: 0.0, blue: 0.0, alpha: 0.8).set()
         
@@ -46,9 +48,6 @@ class CaptureView: NSView {
     @objc func timerAnimation(_ timer:Timer) {
         
         needsDisplay = true
-        
     }
-    
-    
 }
 
