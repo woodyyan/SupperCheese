@@ -20,6 +20,7 @@
 		82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */; };
 		82F3F43D200671E500CFC0E2 /* CloudApiSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F3F43C200671E500CFC0E2 /* CloudApiSdk.framework */; };
 		82F3F4422006742500CFC0E2 /* ApiClient_ocr.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */; };
+		82F3F44420087B4900CFC0E2 /* RecognizeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		82F3F43E2006724500CFC0E2 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		82F3F4402006742500CFC0E2 /* ApiClient_ocr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient_ocr.h; sourceTree = "<group>"; };
 		82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient_ocr.m; sourceTree = "<group>"; };
+		82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				82F3F4312004F90D00CFC0E2 /* WindowInfoManager.swift */,
 				82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */,
 				82F3F43E2006724500CFC0E2 /* Bridge-Header.h */,
+				82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */,
 			);
 			path = SuperCheese;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F3F44420087B4900CFC0E2 /* RecognizeEngine.swift in Sources */,
 				82F3F3FE20034B3200CFC0E2 /* ViewController.swift in Sources */,
 				82F3F4322004F90D00CFC0E2 /* WindowInfoManager.swift in Sources */,
 				82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */,
@@ -455,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
@@ -466,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.easystudio.SuperCheese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SuperCheese/Bridge-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
@@ -475,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
@@ -486,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.easystudio.SuperCheese;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SuperCheese/Bridge-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
