@@ -19,9 +19,15 @@ class ViewController: NSViewController {
     
     var captureSession:AVCaptureSession!
     var stillImageOutput:AVCaptureStillImageOutput!
+    
+    @IBOutlet weak var statusLabel: NSTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        recognizeEngine.delegate = self
+        
+        self.statusLabel.stringValue = "按下任意键开始搜索"
 
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
             self.keyDown(with: aEvent)
@@ -32,6 +38,7 @@ class ViewController: NSViewController {
     override func keyDown(with event: NSEvent) {
         super.keyDown(with: event)
         
+        statusLabel.stringValue = "正在搜索..."
         prepareCaptureWindow()
         captureScreen()
     }
@@ -113,6 +120,26 @@ class ViewController: NSViewController {
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
+        }
+    }
+}
+
+extension ViewController : RecoginizeEngineDelegate{
+    func recoginizeEngine(sentence: String) {
+        self.statusLabel.stringValue = "已打开浏览器"
+        openBaidu(sentence: sentence)
+    }
+    
+    private func openBaidu(sentence:String){
+        let urlString = "https://www.baidu.com/s"
+        let queryItem = URLQueryItem(name: "wd", value: sentence)
+        let queryItem1 = URLQueryItem(name: "ie", value: "utf-8")
+        let urlComponents = NSURLComponents(string: urlString)!
+        urlComponents.queryItems = [queryItem, queryItem1]
+        if let regURL = urlComponents.url {
+            print(regURL)
+            let result = NSWorkspace.shared.open(regURL)
+            print(result)
         }
     }
 }

@@ -11,9 +11,10 @@ import Cocoa
 import AVFoundation
 
 class RecognizeEngine {
+    var delegate:RecoginizeEngineDelegate?
+    
     func recognizeImage(imageData:Data?){
         if let strBase64 = imageData?.base64EncodedString(options: .lineLength64Characters){
-            //            print("IMAGE DATA: \(strBase64)")
             
             print("START:")
             sendRequest(imageBase64String: strBase64)
@@ -36,20 +37,8 @@ class RecognizeEngine {
                 sentence += word
                 print(word)
             }
-            self.openBaidu(sentence: sentence)
-        }
-    }
-    
-    func openBaidu(sentence:String){
-        let urlString = "https://www.baidu.com/s"
-        let queryItem = URLQueryItem(name: "wd", value: sentence)
-        let queryItem1 = URLQueryItem(name: "ie", value: "utf-8")
-        let urlComponents = NSURLComponents(string: urlString)!
-        urlComponents.queryItems = [queryItem, queryItem1]
-        if let regURL = urlComponents.url {
-            print(regURL)
-            let result = NSWorkspace.shared.open(regURL)
-            print(result)
+            
+            self.delegate?.recoginizeEngine(sentence: sentence)
         }
     }
     
@@ -105,4 +94,8 @@ class RecognizeEngine {
         
         return try! JSONSerialization.data(withJSONObject: dict, options: [])
     }
+}
+
+protocol RecoginizeEngineDelegate {
+    func recoginizeEngine(sentence:String)
 }
