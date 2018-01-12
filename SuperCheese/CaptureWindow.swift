@@ -29,7 +29,7 @@ class CaptureWindow: NSWindow {
         styleMask = [NSWindow.StyleMask.borderless, NSWindow.StyleMask.resizable]
         ignoresMouseEvents = false
         
-        setFrame(NSRect(x: 200, y: 200, width: 500, height: 500), display: true)
+        setFrame(NSRect(x: 200, y: 200, width: 500, height: 170), display: true)
     }
     
     override func performKeyEquivalent(with theEvent: NSEvent) -> Bool {
