@@ -26,15 +26,15 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         recognizeEngine.delegate = self
-
-        NSEvent.addLocalMonitorForEvents(matching: .keyUp) { (aEvent) -> NSEvent? in
-            self.keyDown(with: aEvent)
-            return aEvent
-        }
     }
     
-    override func keyDown(with event: NSEvent) {
-        super.keyDown(with: event)
+    override func mouseDown(with event: NSEvent) {
+        self.prepareCaptureWindow()
+        self.captureScreen()
+    }
+    
+    override func keyUp(with event: NSEvent) {
+        super.keyUp(with: event)
         
         prepareCaptureWindow()
         captureScreen()
