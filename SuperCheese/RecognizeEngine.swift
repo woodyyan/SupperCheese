@@ -24,21 +24,24 @@ class RecognizeEngine {
     func sendRequest(imageBase64String:String){
         let body = translate(data: imageBase64String)
         ApiClient_ocr.instance().recoganize(body) { (data, response, error) in
-            print("ERROR:")
-            print(error ?? "")
-            let dataJson = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            print(dataJson)
-            let dict = dataJson as! [String: Any]
-            let rets = dict["ret"] as! NSArray
-            var sentence = ""
-            for ret in rets{
-                let retDict = ret as! [String: Any]
-                let word = retDict["word"] as! String
-                sentence += word
-                print(word)
-            }
             
-            self.delegate?.recoginizeEngine(sentence: sentence)
+            if let realError = error{
+                print("ERROR:")
+                print(realError.localizedDescription)
+            } else{
+                let dataJson = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                print(dataJson)
+                let dict = dataJson as! [String: Any]
+                let rets = dict["ret"] as! NSArray
+                var sentence = ""
+                for ret in rets{
+                    let retDict = ret as! [String: Any]
+                    let word = retDict["word"] as! String
+                    sentence += word
+                    print(word)
+                }
+                self.delegate?.recoginizeEngine(sentence: sentence)
+            }
         }
     }
     

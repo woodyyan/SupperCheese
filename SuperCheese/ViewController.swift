@@ -26,10 +26,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         recognizeEngine.delegate = self
-        
-        self.statusLabel.stringValue = "按下任意键开始搜索"
 
-        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
+        NSEvent.addLocalMonitorForEvents(matching: .keyUp) { (aEvent) -> NSEvent? in
             self.keyDown(with: aEvent)
             return aEvent
         }
@@ -38,7 +36,6 @@ class ViewController: NSViewController {
     override func keyDown(with event: NSEvent) {
         super.keyDown(with: event)
         
-        statusLabel.stringValue = "正在搜索..."
         prepareCaptureWindow()
         captureScreen()
     }
@@ -126,7 +123,6 @@ class ViewController: NSViewController {
 
 extension ViewController : RecoginizeEngineDelegate{
     func recoginizeEngine(sentence: String) {
-        self.statusLabel.stringValue = "已打开浏览器"
         openBaidu(sentence: sentence)
     }
     
