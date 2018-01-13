@@ -19,8 +19,7 @@ class ViewController: NSViewController {
     
     var captureSession:AVCaptureSession!
     var stillImageOutput:AVCaptureStillImageOutput!
-    
-    @IBOutlet weak var statusLabel: NSTextField!
+    lazy var consoleViewController = (NSApplication.shared.delegate as? AppDelegate)?.consoleViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +28,13 @@ class ViewController: NSViewController {
     }
     
     override func mouseUp(with event: NSEvent) {
+        consoleViewController?.statusLabel.stringValue = "开始搜索..."
+        consoleViewController?.questionLabel.stringValue = ""
+        consoleViewController?.answer1Label.stringValue = ""
+        consoleViewController?.answer2Label.stringValue = ""
+        consoleViewController?.answer3Label.stringValue = ""
         self.prepareCaptureWindow()
         self.captureScreen()
-    }
-    
-    override func mouseDown(with event: NSEvent) {
-        
-    }
-    
-    override func keyUp(with event: NSEvent) {
-        super.keyUp(with: event)
-        
-        prepareCaptureWindow()
-        captureScreen()
     }
     
     func prepareCaptureWindow(){
@@ -121,23 +114,9 @@ class ViewController: NSViewController {
 
 extension ViewController : RecoginizeEngineDelegate{
     func recoginizeEngine(sentences: [String]) {
-//        openBaidu(sentence: sentence)
-        
         let searchEngine = SearchEngine()
-        searchEngine.search(elements: sentences)
-    }
-    
-    private func openBaidu(sentence:String){
-        let urlString = "https://www.baidu.com/s"
-        let queryItem = URLQueryItem(name: "wd", value: sentence)
-        let queryItem1 = URLQueryItem(name: "ie", value: "utf-8")
-        let urlComponents = NSURLComponents(string: urlString)!
-        urlComponents.queryItems = [queryItem, queryItem1]
-        if let regURL = urlComponents.url {
-            print(regURL)
-            let result = NSWorkspace.shared.open(regURL)
-            print(result)
-        }
+        let question = searchEngine.search(elements: sentences)
+        consoleViewController?.questionLabel.stringValue = question
     }
 }
 

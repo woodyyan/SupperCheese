@@ -7,19 +7,38 @@
 //
 
 import Foundation
+import Cocoa
 
 class SearchEngine {
-    func search(elements:[String]){
+    lazy var consoleViewController = (NSApplication.shared.delegate as? AppDelegate)?.consoleViewController
+    
+    func search(elements:[String]) -> String{
         var sentences = elements
+        var question = sentences.joined()
         if sentences.count > 3{
             let result1 = sentences.remove(at: sentences.count-1)
             let result2 = sentences.remove(at: sentences.count-1)
             let result3 = sentences.remove(at: sentences.count-1)
             let anwsers = [result1, result2, result3]
-            let question = sentences.joined()
+            question = sentences.joined()
+            openBaidu(sentence: question)
             search(question: question, answers: anwsers)
         }else{
             
+        }
+        return question
+    }
+    
+    private func openBaidu(sentence:String){
+        let urlString = "https://www.baidu.com/s"
+        let queryItem = URLQueryItem(name: "wd", value: sentence)
+        let queryItem1 = URLQueryItem(name: "ie", value: "utf-8")
+        let urlComponents = NSURLComponents(string: urlString)!
+        urlComponents.queryItems = [queryItem, queryItem1]
+        if let regURL = urlComponents.url {
+            print(regURL)
+            let result = NSWorkspace.shared.open(regURL)
+            print(result)
         }
     }
     
@@ -46,6 +65,9 @@ class SearchEngine {
     
     private func calculateCount(html:String, answers:[String]){
         var htmlString = html
+        var count1 = 0
+        var count2 = 0
+        var count3 = 0
         for answer in answers{
             var count = 0
             var range = htmlString.range(of: answer)
@@ -54,7 +76,34 @@ class SearchEngine {
                 htmlString.removeFirst(range!.upperBound.encodedOffset)
                 range = htmlString.range(of: answer)
             }
-            print("\(answer): \(count)")
+            
+            let result = "\(answer): \(count)"
+            
+            DispatchQueue.main.async {
+                if self.consoleViewController?.answer1Label.stringValue == ""{
+                    count1 = count
+                    self.consoleViewController?.answer1Label.stringValue = result
+                } else if self.consoleViewController?.answer2Label.stringValue == ""{
+                    count2 = count
+                    self.consoleViewController?.answer2Label.stringValue = result
+                }else{
+                    count3 = count
+                    self.consoleViewController?.answer3Label.stringValue = result
+                }
+            }
+            print(result)
+        }
+//        if count1 > count2{
+//            if count1 > count3{
+//                self.consoleViewController?.answer1Label.textColor = NSColor.red
+//            }else if count2 > count3{
+//                self.consoleViewController?.answer2Label.textColor = NSColor.red
+//            }
+//        }else{
+//
+//        }
+        DispatchQueue.main.async {
+            self.consoleViewController?.statusLabel.stringValue = "答案以出！"
         }
     }
     

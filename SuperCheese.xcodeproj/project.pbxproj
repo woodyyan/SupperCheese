@@ -22,6 +22,9 @@
 		82F3F4422006742500CFC0E2 /* ApiClient_ocr.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */; };
 		82F3F44420087B4900CFC0E2 /* RecognizeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */; };
 		82F3F4482009000100CFC0E2 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4472009000100CFC0E2 /* SearchEngine.swift */; };
+		82F3F4502009C02400CFC0E2 /* Console.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F3F44F2009C02400CFC0E2 /* Console.storyboard */; };
+		82F3F4532009C07700CFC0E2 /* ConsoleWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4512009C07700CFC0E2 /* ConsoleWindowController.swift */; };
+		82F3F4562009FA6600CFC0E2 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4552009FA6600CFC0E2 /* ConsoleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient_ocr.m; sourceTree = "<group>"; };
 		82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeEngine.swift; sourceTree = "<group>"; };
 		82F3F4472009000100CFC0E2 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		82F3F44F2009C02400CFC0E2 /* Console.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Console.storyboard; sourceTree = "<group>"; };
+		82F3F4512009C07700CFC0E2 /* ConsoleWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleWindowController.swift; sourceTree = "<group>"; };
+		82F3F4552009FA6600CFC0E2 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 				82F3F43E2006724500CFC0E2 /* Bridge-Header.h */,
 				82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */,
 				82F3F4472009000100CFC0E2 /* SearchEngine.swift */,
+				82F3F44F2009C02400CFC0E2 /* Console.storyboard */,
+				82F3F4512009C07700CFC0E2 /* ConsoleWindowController.swift */,
+				82F3F4552009FA6600CFC0E2 /* ConsoleViewController.swift */,
 			);
 			path = SuperCheese;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F3F4502009C02400CFC0E2 /* Console.storyboard in Resources */,
 				82F3F40020034B3200CFC0E2 /* Assets.xcassets in Resources */,
 				82F3F40320034B3200CFC0E2 /* Main.storyboard in Resources */,
 			);
@@ -297,9 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F3F4562009FA6600CFC0E2 /* ConsoleViewController.swift in Sources */,
 				82F3F44420087B4900CFC0E2 /* RecognizeEngine.swift in Sources */,
 				82F3F3FE20034B3200CFC0E2 /* ViewController.swift in Sources */,
 				82F3F4322004F90D00CFC0E2 /* WindowInfoManager.swift in Sources */,
+				82F3F4532009C07700CFC0E2 /* ConsoleWindowController.swift in Sources */,
 				82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */,
 				82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */,
 				82F3F4482009000100CFC0E2 /* SearchEngine.swift in Sources */,

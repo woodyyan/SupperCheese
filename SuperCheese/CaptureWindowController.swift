@@ -9,6 +9,7 @@
 import Cocoa
 
 class CaptureWindowController: NSWindowController {
+    
     override var windowNibName: NSNib.Name? {
         return NSNib.Name("CaptureWindowController")
     }

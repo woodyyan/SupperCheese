@@ -31,17 +31,19 @@ class RecognizeEngine {
             } else{
                 let dataJson = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
                 print(dataJson)
-                let dict = dataJson as! [String: Any]
-                let rets = dict["ret"] as! NSArray
-                var sentences = [String]()
-                for ret in rets{
-                    //TODO:过滤开头的数字
-                    let retDict = ret as! [String: Any]
-                    let word = retDict["word"] as! String
-                    sentences.append(word)
-                    print(word)
+                if let dict = dataJson as? [String: Any]{
+                    if let rets = dict["ret"] as? NSArray{
+                        var sentences = [String]()
+                        for ret in rets{
+                            //TODO:过滤开头的数字
+                            let retDict = ret as! [String: Any]
+                            let word = retDict["word"] as! String
+                            sentences.append(word)
+                            print(word)
+                        }
+                        self.delegate?.recoginizeEngine(sentences: sentences)
+                    }
                 }
-                self.delegate?.recoginizeEngine(sentences: sentences)
             }
         }
     }

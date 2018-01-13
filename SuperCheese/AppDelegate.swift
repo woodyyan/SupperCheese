@@ -11,11 +11,21 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    var consoleWindowController:ConsoleWindowController?
+    var consoleViewController:ConsoleViewController?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
-        
+        showConsoleWindow()
+    }
+    
+    func showConsoleWindow(){
+        if consoleWindowController == nil{
+            let storyBoard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Console"), bundle: nil)
+            let viewController = storyBoard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "consoleWindowController")) as! ConsoleWindowController
+            consoleWindowController = viewController
+            consoleWindowController?.showWindow(nil)
+            consoleViewController = consoleWindowController?.contentViewController as? ConsoleViewController
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
