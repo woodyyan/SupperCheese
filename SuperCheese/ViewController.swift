@@ -28,9 +28,13 @@ class ViewController: NSViewController {
         recognizeEngine.delegate = self
     }
     
-    override func mouseDown(with event: NSEvent) {
+    override func mouseUp(with event: NSEvent) {
         self.prepareCaptureWindow()
         self.captureScreen()
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        
     }
     
     override func keyUp(with event: NSEvent) {
@@ -113,17 +117,14 @@ class ViewController: NSViewController {
             print(error)
         }
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
 }
 
 extension ViewController : RecoginizeEngineDelegate{
-    func recoginizeEngine(sentence: String) {
-        openBaidu(sentence: sentence)
+    func recoginizeEngine(sentences: [String]) {
+//        openBaidu(sentence: sentence)
+        
+        let searchEngine = SearchEngine()
+        searchEngine.search(elements: sentences)
     }
     
     private func openBaidu(sentence:String){

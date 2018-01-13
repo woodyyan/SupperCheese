@@ -21,6 +21,7 @@
 		82F3F43D200671E500CFC0E2 /* CloudApiSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F3F43C200671E500CFC0E2 /* CloudApiSdk.framework */; };
 		82F3F4422006742500CFC0E2 /* ApiClient_ocr.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */; };
 		82F3F44420087B4900CFC0E2 /* RecognizeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */; };
+		82F3F4482009000100CFC0E2 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4472009000100CFC0E2 /* SearchEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		82F3F4402006742500CFC0E2 /* ApiClient_ocr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient_ocr.h; sourceTree = "<group>"; };
 		82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient_ocr.m; sourceTree = "<group>"; };
 		82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeEngine.swift; sourceTree = "<group>"; };
+		82F3F4472009000100CFC0E2 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */,
 				82F3F43E2006724500CFC0E2 /* Bridge-Header.h */,
 				82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */,
+				82F3F4472009000100CFC0E2 /* SearchEngine.swift */,
 			);
 			path = SuperCheese;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				82F3F4322004F90D00CFC0E2 /* WindowInfoManager.swift in Sources */,
 				82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */,
 				82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */,
+				82F3F4482009000100CFC0E2 /* SearchEngine.swift in Sources */,
 				82F3F42A2003C87200CFC0E2 /* CaptureWindow.swift in Sources */,
 				82F3F42C2004A82100CFC0E2 /* CaptureWindowController.swift in Sources */,
 				82F3F4422006742500CFC0E2 /* ApiClient_ocr.m in Sources */,

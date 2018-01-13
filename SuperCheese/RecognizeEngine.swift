@@ -21,7 +21,7 @@ class RecognizeEngine {
         }
     }
     
-    func sendRequest(imageBase64String:String){
+    private func sendRequest(imageBase64String:String){
         let body = translate(data: imageBase64String)
         ApiClient_ocr.instance().recoganize(body) { (data, response, error) in
             
@@ -33,20 +33,20 @@ class RecognizeEngine {
                 print(dataJson)
                 let dict = dataJson as! [String: Any]
                 let rets = dict["ret"] as! NSArray
-                var sentence = ""
+                var sentences = [String]()
                 for ret in rets{
+                    //TODO:过滤开头的数字
                     let retDict = ret as! [String: Any]
                     let word = retDict["word"] as! String
-                    sentence += word
+                    sentences.append(word)
                     print(word)
                 }
-                self.delegate?.recoginizeEngine(sentence: sentence)
+                self.delegate?.recoginizeEngine(sentences: sentences)
             }
         }
     }
     
-    func sendRequestToAliyun(imageBase64String:String){
-        
+    private func sendRequestToAliyun(imageBase64String:String){
         let url = URL(string: "https://tysbgpu.market.alicloudapi.com/api/predict/ocr_general")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -75,7 +75,7 @@ class RecognizeEngine {
         dataTask.resume()
     }
     
-    func signature() -> String{
+    private func signature() -> String{
         let path = "/api/predict/ocr_general"
         let url = path
         
@@ -86,7 +86,7 @@ class RecognizeEngine {
         return signString
     }
     
-    func translate(data: String) -> Data {
+    private func translate(data: String) -> Data {
         let dict = [
             "image": data,
             "configure": [
@@ -100,5 +100,5 @@ class RecognizeEngine {
 }
 
 protocol RecoginizeEngineDelegate {
-    func recoginizeEngine(sentence:String)
+    func recoginizeEngine(sentences:[String])
 }
