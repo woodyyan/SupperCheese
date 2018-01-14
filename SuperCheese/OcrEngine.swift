@@ -38,12 +38,15 @@ class OcrEngine {
                     let dataJson = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
                     print(dataJson)
                     if let dict = dataJson as? [String: Any]{
-                        if let number = dict["words_result_num"] as? String{
-                            print(number)
+                        if let words = dict["words_result"] as? [[String:Any]]{
+                            var sentences = [String]()
+                            for word in words{
+                                if let sentence = word["words"] as? String{
+                                    sentences.append(sentence)
+                                }
+                            }
+                            self.delegate?.ocrEngine(sentences: sentences)
                         }
-//                        if let results = dict["words_result"] as String{
-//                            print(number)
-//                        }
                     }
                 }
             }
