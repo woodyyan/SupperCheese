@@ -1,2 +1,2 @@
-#import "ApiClient_ocr.h"
-#import <CommonCrypto/CommonHMAC.h>
+//#import <AipOcrSdk/AipOcrSdk.h>
+

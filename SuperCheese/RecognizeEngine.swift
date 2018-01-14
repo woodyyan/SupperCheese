@@ -22,30 +22,29 @@ class RecognizeEngine {
     }
     
     private func sendRequest(imageBase64String:String){
-        let body = translate(data: imageBase64String)
-        ApiClient_ocr.instance().recoganize(body) { (data, response, error) in
-            
-            if let realError = error{
-                print("ERROR:")
-                print(realError.localizedDescription)
-            } else{
-                let dataJson = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                print(dataJson)
-                if let dict = dataJson as? [String: Any]{
-                    if let rets = dict["ret"] as? NSArray{
-                        var sentences = [String]()
-                        for ret in rets{
-                            //TODO:过滤开头的数字
-                            let retDict = ret as! [String: Any]
-                            let word = retDict["word"] as! String
-                            sentences.append(word)
-                            print(word)
-                        }
-                        self.delegate?.recoginizeEngine(sentences: sentences)
-                    }
-                }
-            }
-        }
+//        let body = translate(data: imageBase64String)
+//        ApiClient_ocr.instance().recoganize(body) { (data, response, error) in
+//            if let realError = error{
+//                print("ERROR:")
+//                print(realError.localizedDescription)
+//            } else{
+//                let dataJson = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+//                print(dataJson)
+//                if let dict = dataJson as? [String: Any]{
+//                    if let rets = dict["ret"] as? NSArray{
+//                        var sentences = [String]()
+//                        for ret in rets{
+//                            //TODO:过滤开头的数字
+//                            let retDict = ret as! [String: Any]
+//                            let word = retDict["word"] as! String
+//                            sentences.append(word)
+//                            print(word)
+//                        }
+//                        self.delegate?.recoginizeEngine(sentences: sentences)
+//                    }
+//                }
+//            }
+//        }
     }
     
     private func sendRequestToAliyun(imageBase64String:String){
@@ -55,7 +54,7 @@ class RecognizeEngine {
         request.httpBody = translate(data: imageBase64String)
         request.addValue("application/octet-stream; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.addValue("24762824", forHTTPHeaderField: "X-Ca-Key")
-        request.addValue(signature(), forHTTPHeaderField: "X-Ca-Signature")
+//        request.addValue(signature(), forHTTPHeaderField: "X-Ca-Signature")
         
         let session = URLSession.shared
         print("Start task:")
@@ -77,16 +76,16 @@ class RecognizeEngine {
         dataTask.resume()
     }
     
-    private func signature() -> String{
-        let path = "/api/predict/ocr_general"
-        let url = path
-        
-        let stringToSign = "POST" + "\n" + "" + "\n" + "" + "\n" + "" + "\n" + "" + "\n" + "" + url
-        
-        let sign = stringToSign.hmacsha1(key: "79144b7457ea1be8a9d55fad60848bd7")
-        let signString = sign.base64EncodedString()
-        return signString
-    }
+//    private func signature() -> String{
+//        let path = "/api/predict/ocr_general"
+//        let url = path
+//        
+//        let stringToSign = "POST" + "\n" + "" + "\n" + "" + "\n" + "" + "\n" + "" + "\n" + "" + url
+//        
+//        let sign = stringToSign.hmacsha1(key: "79144b7457ea1be8a9d55fad60848bd7")
+//        let signString = sign.base64EncodedString()
+//        return signString
+//    }
     
     private func translate(data: String) -> Data {
         let dict = [

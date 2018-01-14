@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82E58031200B864E003E2435 /* AccessTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E58030200B864E003E2435 /* AccessTokenService.swift */; };
 		82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F3FB20034B3200CFC0E2 /* AppDelegate.swift */; };
 		82F3F3FE20034B3200CFC0E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F3FD20034B3200CFC0E2 /* ViewController.swift */; };
 		82F3F40020034B3200CFC0E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F3F3FF20034B3200CFC0E2 /* Assets.xcassets */; };
@@ -18,13 +19,12 @@
 		82F3F42C2004A82100CFC0E2 /* CaptureWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F42B2004A82100CFC0E2 /* CaptureWindowController.swift */; };
 		82F3F4322004F90D00CFC0E2 /* WindowInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4312004F90D00CFC0E2 /* WindowInfoManager.swift */; };
 		82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */; };
-		82F3F43D200671E500CFC0E2 /* CloudApiSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F3F43C200671E500CFC0E2 /* CloudApiSdk.framework */; };
-		82F3F4422006742500CFC0E2 /* ApiClient_ocr.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */; };
 		82F3F44420087B4900CFC0E2 /* RecognizeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */; };
 		82F3F4482009000100CFC0E2 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4472009000100CFC0E2 /* SearchEngine.swift */; };
 		82F3F4502009C02400CFC0E2 /* Console.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F3F44F2009C02400CFC0E2 /* Console.storyboard */; };
 		82F3F4532009C07700CFC0E2 /* ConsoleWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4512009C07700CFC0E2 /* ConsoleWindowController.swift */; };
 		82F3F4562009FA6600CFC0E2 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F4552009FA6600CFC0E2 /* ConsoleViewController.swift */; };
+		82F3F458200A4EB100CFC0E2 /* OcrEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3F457200A4EB100CFC0E2 /* OcrEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82E58030200B864E003E2435 /* AccessTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenService.swift; sourceTree = "<group>"; };
 		82F3F3F820034B3200CFC0E2 /* SuperCheese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCheese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F3F3FB20034B3200CFC0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F3F3FD20034B3200CFC0E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,15 +64,13 @@
 		82F3F42B2004A82100CFC0E2 /* CaptureWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureWindowController.swift; sourceTree = "<group>"; };
 		82F3F4312004F90D00CFC0E2 /* WindowInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInfoManager.swift; sourceTree = "<group>"; };
 		82F3F4332004F94A00CFC0E2 /* WindowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInfo.swift; sourceTree = "<group>"; };
-		82F3F43C200671E500CFC0E2 /* CloudApiSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudApiSdk.framework; sourceTree = "<group>"; };
 		82F3F43E2006724500CFC0E2 /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
-		82F3F4402006742500CFC0E2 /* ApiClient_ocr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient_ocr.h; sourceTree = "<group>"; };
-		82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient_ocr.m; sourceTree = "<group>"; };
 		82F3F44320087B4900CFC0E2 /* RecognizeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeEngine.swift; sourceTree = "<group>"; };
 		82F3F4472009000100CFC0E2 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
 		82F3F44F2009C02400CFC0E2 /* Console.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Console.storyboard; sourceTree = "<group>"; };
 		82F3F4512009C07700CFC0E2 /* ConsoleWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleWindowController.swift; sourceTree = "<group>"; };
 		82F3F4552009FA6600CFC0E2 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		82F3F457200A4EB100CFC0E2 /* OcrEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F3F43D200671E500CFC0E2 /* CloudApiSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82E58027200AFC8E003E2435 /* BaiduOcr */ = {
+			isa = PBXGroup;
+			children = (
+				82E58030200B864E003E2435 /* AccessTokenService.swift */,
+			);
+			path = BaiduOcr;
+			sourceTree = "<group>";
+		};
 		82F3F3EF20034B3200CFC0E2 = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +130,7 @@
 		82F3F3FA20034B3200CFC0E2 /* SuperCheese */ = {
 			isa = PBXGroup;
 			children = (
-				82F3F4402006742500CFC0E2 /* ApiClient_ocr.h */,
-				82F3F4412006742500CFC0E2 /* ApiClient_ocr.m */,
+				82E58027200AFC8E003E2435 /* BaiduOcr */,
 				82F3F3FB20034B3200CFC0E2 /* AppDelegate.swift */,
 				82F3F3FD20034B3200CFC0E2 /* ViewController.swift */,
 				82F3F3FF20034B3200CFC0E2 /* Assets.xcassets */,
@@ -143,6 +148,7 @@
 				82F3F44F2009C02400CFC0E2 /* Console.storyboard */,
 				82F3F4512009C07700CFC0E2 /* ConsoleWindowController.swift */,
 				82F3F4552009FA6600CFC0E2 /* ConsoleViewController.swift */,
+				82F3F457200A4EB100CFC0E2 /* OcrEngine.swift */,
 			);
 			path = SuperCheese;
 			sourceTree = "<group>";
@@ -168,7 +174,6 @@
 		82F3F43B200671D700CFC0E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82F3F43C200671E500CFC0E2 /* CloudApiSdk.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -315,9 +320,10 @@
 				82F3F3FC20034B3200CFC0E2 /* AppDelegate.swift in Sources */,
 				82F3F4342004F94A00CFC0E2 /* WindowInfo.swift in Sources */,
 				82F3F4482009000100CFC0E2 /* SearchEngine.swift in Sources */,
+				82F3F458200A4EB100CFC0E2 /* OcrEngine.swift in Sources */,
+				82E58031200B864E003E2435 /* AccessTokenService.swift in Sources */,
 				82F3F42A2003C87200CFC0E2 /* CaptureWindow.swift in Sources */,
 				82F3F42C2004A82100CFC0E2 /* CaptureWindowController.swift in Sources */,
-				82F3F4422006742500CFC0E2 /* ApiClient_ocr.m in Sources */,
 				82F3F4282003B54300CFC0E2 /* CaptureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

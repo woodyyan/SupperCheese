@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: NSViewController {
     
-    let recognizeEngine = RecognizeEngine()
+    let ocrEngine = OcrEngine()
     
     var captureController:CaptureWindowController? = nil
     
@@ -24,7 +24,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recognizeEngine.delegate = self
+        ocrEngine.delegate = self
     }
     
     override func mouseUp(with event: NSEvent) {
@@ -95,7 +95,7 @@ class ViewController: NSViewController {
             if let videoConnection = stillImageOutput.connection(with: AVMediaType.video){
                 stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (imageBuffer, error) in
                     let imageDataJpeg = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageBuffer!)
-                    self.recognizeEngine.recognizeImage(imageData: imageDataJpeg)
+                    self.ocrEngine.recognize(imageData: imageDataJpeg)
                     //self.saveImage(imageData: imageDataJpeg)
                 })
             }
@@ -112,8 +112,8 @@ class ViewController: NSViewController {
     }
 }
 
-extension ViewController : RecoginizeEngineDelegate{
-    func recoginizeEngine(sentences: [String]) {
+extension ViewController : OcrEngineDelegate{
+    func ocrEngine(sentences: [String]) {
         let searchEngine = SearchEngine()
         let question = searchEngine.search(elements: sentences)
         consoleViewController?.questionLabel.stringValue = question
@@ -138,19 +138,6 @@ extension String {
     func urlencode() -> String {
         let stringToEncode = self.replacingOccurrences(of: " ", with: "+")
         return stringToEncode.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
-    }
-    
-    func hmacsha1(key: String) -> Data {
-        
-        let dataToDigest = self.data(using: String.Encoding.utf8)
-        let keyData = key.data(using: String.Encoding.utf8)
-        
-        let digestLength = Int(CC_SHA1_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<Any>.allocate(capacity: digestLength)
-        
-        CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA1), (keyData! as NSData).bytes, keyData!.count, (dataToDigest! as NSData).bytes, dataToDigest!.count, result)
-        
-        return Data(bytes: UnsafePointer(result), count: digestLength)
     }
 }
 
