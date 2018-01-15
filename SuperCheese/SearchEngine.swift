@@ -68,7 +68,8 @@ class SearchEngine {
         var count1 = 0
         var count2 = 0
         var count3 = 0
-        for answer in answers{
+        for var answer in answers{
+            answer = filterAnswer(answer: answer)
             var count = 0
             var range = htmlString.range(of: answer)
             while range != nil {
@@ -115,6 +116,17 @@ class SearchEngine {
 
             self.consoleViewController?.statusLabel.stringValue = "答案已出！"
         }
+    }
+    
+    private func filterAnswer(answer:String) -> String{
+        var filteredAnswer = answer
+        if let range = filteredAnswer.range(of: "《"){
+            filteredAnswer.removeSubrange(range)
+        }
+        if let range = filteredAnswer.range(of: "》"){
+            filteredAnswer.removeSubrange(range)
+        }
+        return filteredAnswer
     }
     
     private func getUrl(question:String) -> URL?{
