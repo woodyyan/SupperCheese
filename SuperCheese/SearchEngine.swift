@@ -19,9 +19,10 @@ class SearchEngine {
             let result1 = sentences.remove(at: sentences.count-1)
             let result2 = sentences.remove(at: sentences.count-1)
             let result3 = sentences.remove(at: sentences.count-1)
-            let anwsers = [result1, result2, result3]
+            let anwsers = [result3, result2, result1]
+            
             DispatchQueue.main.async {
-                self.consoleViewController?.questionLabel.stringValue = question
+                self.consoleViewController?.questionLabel.stringValue = sentences.joined()
             }
             question = filterQuestion(question: sentences.joined())
             openBaidu(sentence: question)
