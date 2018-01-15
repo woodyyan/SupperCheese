@@ -118,10 +118,7 @@ class ViewController: NSViewController {
 extension ViewController : OcrEngineDelegate{
     func ocrEngine(sentences: [String]) {
         let searchEngine = SearchEngine()
-        let question = searchEngine.search(elements: sentences)
-        DispatchQueue.main.async {
-            self.consoleViewController?.questionLabel.stringValue = question
-        }
+        searchEngine.search(elements: sentences)
     }
 }
 

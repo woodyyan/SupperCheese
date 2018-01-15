@@ -12,7 +12,7 @@ import Cocoa
 class SearchEngine {
     lazy var consoleViewController = (NSApplication.shared.delegate as? AppDelegate)?.consoleViewController
     
-    func search(elements:[String]) -> String{
+    func search(elements:[String]){
         var sentences = elements
         var question = sentences.joined()
         if sentences.count > 3{
@@ -20,13 +20,28 @@ class SearchEngine {
             let result2 = sentences.remove(at: sentences.count-1)
             let result3 = sentences.remove(at: sentences.count-1)
             let anwsers = [result1, result2, result3]
-            question = sentences.joined()
+            DispatchQueue.main.async {
+                self.consoleViewController?.questionLabel.stringValue = question
+            }
+            question = filterQuestion(question: sentences.joined())
             openBaidu(sentence: question)
             search(question: question, answers: anwsers)
         }else{
             
         }
-        return question
+    }
+    
+    private func filterQuestion(question: String) -> String{
+        var filteredQuestion = question
+        let prefix = ["1.", "2.", "3." ,"4.", "5.", "6.", "7.", "8.", "9.", "10.", "11.", "12.", "以下哪个", "以下哪个不是", "以下哪个是", "下列哪个不是", "下列哪个", "下列哪个是"]
+        for pre in prefix{
+            if filteredQuestion.starts(with: pre), let range = filteredQuestion.range(of: pre){
+                filteredQuestion.removeSubrange(range)
+                break
+            }
+        }
+        
+        return filteredQuestion
     }
     
     private func openBaidu(sentence:String){
