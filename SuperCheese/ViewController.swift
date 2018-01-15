@@ -33,6 +33,9 @@ class ViewController: NSViewController {
         consoleViewController?.answer1Label.stringValue = ""
         consoleViewController?.answer2Label.stringValue = ""
         consoleViewController?.answer3Label.stringValue = ""
+        consoleViewController?.answer1Label.textColor = NSColor.black
+        consoleViewController?.answer2Label.textColor = NSColor.black
+        consoleViewController?.answer3Label.textColor = NSColor.black
         self.prepareCaptureWindow()
         self.captureScreen()
     }
@@ -116,7 +119,9 @@ extension ViewController : OcrEngineDelegate{
     func ocrEngine(sentences: [String]) {
         let searchEngine = SearchEngine()
         let question = searchEngine.search(elements: sentences)
-        consoleViewController?.questionLabel.stringValue = question
+        DispatchQueue.main.async {
+            self.consoleViewController?.questionLabel.stringValue = question
+        }
     }
 }
 

@@ -93,17 +93,27 @@ class SearchEngine {
             }
             print(result)
         }
-//        if count1 > count2{
-//            if count1 > count3{
-//                self.consoleViewController?.answer1Label.textColor = NSColor.red
-//            }else if count2 > count3{
-//                self.consoleViewController?.answer2Label.textColor = NSColor.red
-//            }
-//        }else{
-//
-//        }
         DispatchQueue.main.async {
-            self.consoleViewController?.statusLabel.stringValue = "答案以出！"
+            if count1 == count2 && count2 == count3{
+                
+            } else{
+                if count1 > count2{
+                    if count1 > count3{
+                        self.consoleViewController?.answer1Label.textColor = NSColor.red
+                    }
+                    else{
+                        self.consoleViewController?.answer3Label.textColor = NSColor.red
+                    }
+                }else{
+                    if count2 > count3{
+                        self.consoleViewController?.answer2Label.textColor = NSColor.red
+                    }else{
+                        self.consoleViewController?.answer3Label.textColor = NSColor.red
+                    }
+                }
+            }
+
+            self.consoleViewController?.statusLabel.stringValue = "答案已出！"
         }
     }
     
